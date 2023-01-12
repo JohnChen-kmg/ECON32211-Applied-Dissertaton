@@ -1,0 +1,357 @@
+\documentclass[]{beamer}
+\graphicspath{{Images/}{./}} 
+\usepackage{booktabs} 
+\usetheme{Madrid}
+\usecolortheme{wolverine}
+\usefonttheme{structurebold} % Typeset using the default sans serif font
+
+\usepackage{palatino} % Use the Palatino font for serif text
+\usepackage[default]{opensans} % Use the Open Sans font for sans serif text
+\usepackage{setspace}
+\usepackage{natbib}
+\usepackage{multicol}
+\usepackage{tikz}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{vcell}
+
+\useinnertheme{circles}
+
+
+\title[Referee Report]{The Effect of New York City Sports Outcomes on the Stock Market\citep{p1}} 
+\subtitle{Referee Report} 
+\author[10763756]{Jiaxiang Chen} 
+\date[November 17, 2022]{November 17, 2022} 
+%----------------------------------------------------------------------------------------
+\begin{document}
+\begin{frame}
+\titlepage 
+\end{frame}
+
+\begin{frame}
+	\frametitle{The Research Question}
+        \framesubtitle{\tiny{\textit{"In the lens of behavioural economics, people are irrational and their decisions are often motivated by emotions."}}}
+
+         \begin{enumerate}
+         \small
+            \item \footnotesize{Stock indexes are \textbf{\alert{not wholly economically pertinent}}, the \textbf{\alert{investor's mood}} plays a part.\vskip 0.05cm
+            \item \textbf{\alert{Sports events}} are important determinant of mood.\vskip 0.05cm
+            \item Existing research examines the impact of local sporting outcomes on \textbf{\alert{local stock}}.}
+            \textit{\tiny{For example, England national football team $\implies$ London stock exchange \citep{p2}}}
+      \end{enumerate}
+         
+        \setbeamercolor{block title}{bg=yellow,fg=black}
+	\begin{block}{Question}
+        \textbf{\large{{Whether sports outcomes for New York City teams affect the national major stock indexes?}}}
+        \end{block}
+
+    \begin{columns}
+        \column{.47\textwidth}
+            \setbeamercolor{block title}{bg=yellow,fg=black}
+            \begin{block}{\small{Assumption}}
+                \scriptsize{ Many brokers and analysts are in NYC and are affected by NYC sports teams.\\
+                 \hspace{10em}\textbf{$\Downarrow$}
+                 \hspace{10em}Their recommendations of the stock impact many investors' decisions.}
+            \end{block}
+               
+       \column{.47\textwidth}
+            \setbeamercolor{block title}{bg=yellow,fg=black}
+            \begin{block}{\small{Expectation}}
+                 \scriptsize{The positive emotions of people caused by the NYC sports teams' winning.\\
+                 \hspace{10em}\textbf{$\Downarrow$}
+                 \hspace{10em}Theory 1: Risk taking \uparrow Return \uparrow\ Volume \uparrow\ \\ 
+                 Theory 2: Risk taking \downarrow Return \downarrow\ Volume \downarrow\ }
+            \end{block}
+     
+     \end{columns}
+ \end{frame}
+
+\section{Method}
+\begin{frame}
+        \frametitle{Data and Method}
+
+        \begin{block}{Panel Data: 1949-2014 
+        \tiny{(Source: Datastream, Bloomberg, sports-referemce.com)}}
+         \begin{enumerate}
+             \item \textbf{\small{National market index} \textit{\tiny{(Dow Jones, Nasdaq, etc)}}}
+             \begin{itemize}
+             \tiny
+                \item Daily stock return, daily trading volume
+             \end{itemize}
+             
+             \item \textbf{\small{8 NYC sports teams' outcome} \textit{\tiny{(Yankees, Brooklyn Nets, etc)}}}
+             \begin{itemize}
+             \tiny
+                 \item Outcome of Playoff stage (PF), Championship final (CF)
+             \end{itemize}
+         \end{enumerate}
+        \end{block}
+                
+         \begin{block}{Method 1: Ordinary Least Squares}
+         \tiny{$Index_t$ : Stock return, trading volume\\
+                     $Index_{t-1}$ : Yesterday price, moving average, percentage change}
+             \begin{enumerate}
+              \small{
+                \item $Index_t=\beta_1Index_{t-1}+\beta_2TimeDummy_{it}+\sum_{i=1}^{By\ team_i}\beta_iPFoutcome_{it}$
+                 \item $Index_t=\beta_1Index_{t-1}+\beta_2TimeDummy_{t}+\beta_3PFwin_{t}+\beta_4PFlose_{t}$ \scriptsize{(Pooled)}\
+                \item \small $Index_t=\beta_1Index_{t-1}+\beta_2TimeDummy_{t}+\beta_3CFwin_{t}+\beta_4CFlose_{t}$ \scriptsize{(Pooled)}}
+             \end{enumerate}
+             \end{block}
+
+        \begin{block}{\normalsize{Method 2: Event Study \small{(After $CFwin,\ CFlose$)}}}
+        \small{
+        $Cumulative\ abnormal\ return_{it}=Actual\ return_{it}-Normal\ return$
+        }
+        \end{block}
+    
+\end{frame}
+
+\section{Result}
+
+\begin{frame}
+        \frametitle{Result}
+        \framesubtitle{\textit{What do we learn?}}
+
+
+        \noindent\begin{minipage}{\linewidth}
+        \centering
+        \resizebox{\linewidth}{!}{%
+        \begin{tabular}{lcc} 
+        \toprule
+        \multicolumn{3}{c}{\textbf{Result ($ 10\% $ significance level)}} \\ 
+        \hhline{~}
+        \vcell{\textit{\textbf{Method}}} & \vcell{\textbf{OLS}} & \vcell{\textbf{Event Study}} \\[-\rowheight]
+        \printcellmiddle & \printcellmiddle & \printcellbottom \\ 
+        \cline{1-3}
+        \noalign{\vskip\doublerulesep
+         \vskip-\arrayrulewidth}
+         \cline{1-3}
+        \textit{\textbf{Primary Result}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}1.Yankees PFloss $\implies$ DJIA\ volume\ 8.173\% \Uparrow\\2.No statistical significance found for others\end{tabular}} & \multicolumn{1}{l}{\begin{tabular}[c]{@{}l@{}}1.CFwin $\implies$ CAR(NYSE, S\&P500) \Uparrow~\\2.CFlose $\implies$ CAR(S\&P100, S\&P600) \Downarrow\\3.CFlose $\implies$~ Trading\ volume\Uparrow\\(DIJA, S\&P(100,500,600))\\ \end{tabular}} \\
+        \bottomrule
+        \end{tabular}
+        }
+        \end{minipage} 
+
+ 
+        \footnotesize
+         \item \textbf{Explanation of the difference}
+                \begin{itemize}
+                \setbeamerfont{item projected}{size=\tiny}
+                \scriptsize
+                    \item OLS:  Post-event index$\Longleftrightarrow$ Same year index when no event
+                    \item Event study: Post-event index$\Longleftrightarrow$ \textbf{\alert{Near past}} index before event
+                \end{itemize}
+
+
+\setbeamercolor{block title}{bg=yellow,fg=black}
+        \begin{block}{\small{Conclusion}}
+                \setbeamerfont{item projected}{size=\tiny}
+                \scriptsize
+                    \item \textbf{The outcome of NYC sports team do have impact on national stock market indexes.}\\ \vskip 0.07cm
+                    \tiny\textit{{Affect the emotions of analysts, and consequently their recommendation of the stock.}}
+                     \begin{itemize}
+                         \item \scriptsize{Good sports outcome $\Rightarrow$ Less risk averse $\Rightarrow$ Abnormal high return}\\\vskip 0.07cm
+                         \tiny\textit{{Positive emotions yielded a decreased estimation of risk probability. \citep{p3}}}\\
+                         \item \scriptsize{Bad sports outcome $\Rightarrow$ Less risk averse $\Rightarrow$ High volume}\\\vskip 0.07cm
+                         \tiny\textit{{Negative emotions such as embarrassment and anger increased risk taking. They want to select high-risk, high-reward choices to alter their state of mind. \citep{p4}}}
+                         
+                     \end{itemize}
+        \end{block}
+        
+\end{frame}
+
+\section{Shortcomings and Possible Improvements}
+
+\begin{frame}
+        \frametitle{Shortcomings and Possible Improvements }
+        \framesubtitle{Research Design}
+
+        \begin{columns}
+    \column{.45\textwidth}
+        \setbeamercolor{block title}{bg=yellow,fg=black}
+        \begin{block}{\small{Problems}}
+            \small \textbf{\alert{1.} The topic is not contributive }\\\vskip 0.01cm
+                \scriptsize
+                \begin{itemize}
+                \item Interesting at first glimpse, but casual relation is obvious.\\
+                \tiny{\textit{Sports event $\rightarrow$ emotions $\rightarrow$ invest decisions}} 
+                    \scriptsize
+               \item Mostly for curiosity? Policy  or applications? 
+                \end{itemize}
+            
+            \small \textbf{\alert{2.} The assumption is vague}\\
+                \tiny
+                \begin{itemize}
+                \textit{"NYC sports$\rightarrow$ analysts emotions"}
+                \end{itemize}
+                  \vskip -0.25cm  
+                \begin{itemize}
+                \scriptsize 
+                \item Literature review: independent variable always has a clear effect on investors:\\\vskip 0.15cm 
+                \tiny{\textit{Daylight and weahter $\rightarrow$ Investors' emotions \citep{p5}\citep{p6}}}
+                \vskip -0.15cm
+            \scriptsize
+                  \item What percent are based in NY?\\
+                        What percent are sports fans? 
+
+                \end{itemize}
+                
+        \end{block}
+
+ 
+    \column{.025\textwidth}
+    
+      \vskip 0.7cm
+      \big\Rightarrow
+           
+     \column{.45\textwidth}
+        \setbeamercolor{block title}{bg=yellow,fg=black}
+        \begin{block}{\small{Possible improvements}}
+            \small \textbf{\alert{1.} Think of applications}\\\vskip 0.01cm
+                \scriptsize
+                \begin{itemize}
+                \item For example, after major event, analysts with a season ticket should be given trivial tasks.
+                \item Maybe unpublishable? But it has published.
+                \end{itemize}
+   
+            \small \textbf{\alert{2.} Conduct surveys to circuit it}\\
+                \tiny
+                \begin{itemize}
+                \scriptsize 
+                \item Target the analysts who are indeed affected by the sports events.
+                \item Also, we can obtain the list of their recommended stocks.\\~\\
+                \vskip 0.6cm
+                 \textit{}
+                \end{itemize}
+        \end{block}
+ 
+ \end{columns}
+
+ 
+ \end{frame}
+
+
+
+\begin{frame}
+        \frametitle{Shortcomings and Possible Improvements }
+        \framesubtitle{Econometrics}
+        \begin{columns}
+        \column{.45\textwidth}
+            \begin{block}{\small{Problems}}
+                \small \textbf{\alert{1.}Heterogeneity \tiny{(OLS, Event study)}} \vskip -0.1cm 
+                    \begin{itemize}
+                     \scriptsize
+                    \item Different teams shouldn't be expected to have the same impact over time.\\ \vskip 0.03cm
+                    \tiny{\textit{1.Yankees's impact is different from Mets'\\ \vskip 0.03cm
+                                  2.Brooklyn nets' impact now is different from 50s}}
+                    \end{itemize}
+                    
+                \small \textbf{\alert{2.} Multicollinearity \tiny{(OLS, Event study)}}\vskip -0.1cm 
+                    \begin{itemize}
+                     \scriptsize
+                    \item Different teams can play against each other.\\ \vskip 0.03cm
+                    \tiny{\textit{Yankees's VS Mets in the PF or CF}}
+                    \end{itemize}
+
+                \small \textbf{\alert{3}. OVB \tiny{(Event study: near past)}} \vskip -0.1cm 
+                    \begin{itemize}
+                     \scriptsize
+                    \item Championship stage happen the same time every year.     \vskip -0.3cm  
+                    \item The seasonality of economy impact stock market index.
+                    \end{itemize}
+
+            \end{block}
+
+ 
+    \column{.025\textwidth}
+      \vskip 0.5cm
+      \big\Rightarrow
+
+      
+   \column{.45\textwidth}
+        \begin{block}{\small{Possible Improvements}}
+        
+         \small \textbf{\alert{1.} Fixed effect estimators}\vskip -0.2cm 
+                \begin{itemize}
+                   \textbf{\tiny{(OLS, Event study)}} 
+                \end{itemize} \vskip -0.3cm 
+                    \begin{itemize}
+                     \scriptsize
+                    \item Fixed effects estimators control the individual effects and time effects. \vskip 0.3cm
+                    \end{itemize}
+
+         \small \textbf{\alert{2.} Drop some observations}\vskip -0.2cm
+                \begin{itemize}
+                   \textbf{\tiny{(OLS, Event study)}} 
+                \end{itemize} \vskip -0.3cm
+                    \begin{itemize}
+                     \scriptsize
+                    \item Troublesome observations won't be a lot, so we can drop them.\\ \vskip 0.3cm
+                    \end{itemize}
+
+            \small \textbf{\alert{3}. Add control variable} \vskip -0.2cm
+                \begin{itemize}
+                   \textbf{\tiny{(Event study: near past)}} 
+                \end{itemize}\vskip -0.3cm
+                    \begin{itemize}
+                     \scriptsize 
+                    \item Use time variable to control the seasonality.\\ \vskip 0.03cm
+                    \tiny{\textit{(If it is proper for event study)}}
+                    \end{itemize}
+                    \vskip 0.1cm
+                    \begin{itemize}
+                        \textbf{}
+                    \end{itemize}
+                  
+
+        \end{block}
+
+  \end{columns}
+\end{frame}
+
+
+
+
+\begin{frame} 
+	\frametitle{References}
+	
+	\begin{thebibliography}{99}
+		\scriptsize % Reduce the font size in the bibliography
+
+        	\bibitem[Ashton et al, 2003]{p2}
+			Ashton, John, Bill Gerrard, and Robert Hudson, (2003)
+			\newblock Economic impact of national sporting success: Evidence from the London Stock Exchange
+			\newblock \emph{Applied Economic Letters} 10, 783 – 785.
+
+   		  \bibitem[Cao et al, 2005]{p6}
+			Cao, Melanie, and Jason Wei, (2005)
+			\newblock Stock market returns: A note on temperature anomaly
+			\newblock \emph{Journal of Banking and Finance} 29, 1559 - 1573.
+
+                \bibitem[Hirshleifer et al, 2003]{p5}
+			Hirshleifer, David, and Tyler Shumway, (2003)
+			\newblock Good day sunshine: Stock returns and the weather
+			\newblock \emph{Journal of Finance} 58, 1009 - 1032.
+
+                \bibitem[Johnson et al, 1983]{p3}
+			Johnson, Eric J., and Amos Tversky, (1983)
+			\newblock Affect, Generalization, And The Perception Of Risk
+			\newblock \emph{Journal Of Personality And Social Psychology} 45, 20 – 31.
+
+                \bibitem[Leith et al, 1996]{p4}
+			Leith, Karen Pezza, and Roy F. Baumeister, (1996)
+			\newblock Why Do Bad Moods Increase Self-Defeating Behavior? Emotion, Risk Tasking, And Self-Regulation
+			\newblock \emph{Journal Of Personality And Social Psychology} 71, 1250 – 1267.
+
+   
+  	      \bibitem[Levy, 2015]{p1}
+			Levy, Nir, (2015)
+			\newblock The Effect of New York City Sports Outcomes on the Stock Market
+			\newblock \emph{Undergraduate Economic Review} 12.1, 8.
+
+   
+	\end{thebibliography}
+\end{frame}
+\end{document} 
