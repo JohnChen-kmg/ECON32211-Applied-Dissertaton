@@ -1,0 +1,480 @@
+\documentclass[]{beamer}
+\graphicspath{{Images/}{./}} 
+\usepackage{booktabs} 
+\usetheme{Madrid}
+\usecolortheme{beaver}
+\usefonttheme{structurebold} % Typeset using the default sans serif font
+\definecolor{brown(web)}{rgb}{0.65, 0.16, 0.16}
+\definecolor{lightred}{rgb}{0.34, 0.26, 0.25}
+\definecolor{green}{rgb}{0.22, 0.39, 0}
+\definecolor{foo}{rgb}{0.2,0.2,0.7}
+
+\usepackage{palatino} % Use the Palatino font for serif text
+\usepackage[default]{opensans} % Use the Open Sans font for sans serif text
+\usepackage{setspace}
+\usepackage{natbib}
+\usepackage{multicol}
+\usepackage{tikz}
+
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{vcell}
+
+\useinnertheme{circles}
+
+\newcommand<>{\ColorAlert}[2][foo]{\begingroup%
+\setbeamercolor{alerted text}{fg=#1}\alert{#2}\endgroup}
+
+\title[Research Proposal Presentation]{The Impact of the State Media on the Destination of Internal Migrants in China} 
+\subtitle{Research Proposal Presentation} 
+\author[10763756]{Jiaxiang Chen} 
+\date[December 8, 2022]{December 8, 2022} 
+%----------------------------------------------------------------------------------------
+\begin{document}
+\begin{frame}
+\titlepage 
+\end{frame}
+
+\section{Motivation}
+\begin{frame}
+    \frametitle{Motivation}
+    \framesubtitle{\textit{\tiny{According to the International Labour Organization, Internal migration in China is one of the most extensive in the world.}}}
+    
+    \begin{enumerate}
+    \item \alert{History Context}
+    \vskip 0.2cm
+    \begin{itemize}
+    \footnotesize{
+        \item 
+        Since 1979, China's economic reform has made manufacturing thriving in its eastern part.
+        \vskip 0.1cm
+        \item Policies that strictly prevented internal migration since 50s was partially discarded.
+        \vskip 0.1cm
+        \item  The rural labor began to migrate to search for working opportunities.
+        }
+    \end{itemize}
+    \vskip 0.3cm
+
+    \item \alert{Understanding Migration Decisions is Important}
+    \vskip 0.2cm
+    \begin{itemize}\footnotesize{
+        \item Help us to understand more about the migration pattern and labor market situations \citep{p1}.
+        \vskip 0.1cm
+        \item Relevant polices designing to control the migration and to decrease the labor market frictions.}
+        \\~\\
+        \\~\\
+    \end{itemize}
+    \end{enumerate}
+    
+\end{frame}
+
+
+\section{Information Model}
+\begin{frame}
+    \frametitle{Information and Migrants' Decisions}
+    
+    \setbeamercolor{block title}{bg=brown(web)}
+	\begin{block}{Canonical Migration Choice Model \citep{p2}}
+        \begin{itemize}
+        \scriptsize{
+        \item 
+        A person will move from $o$ to $d$, if utility of expected income of moving exceed that of staying plus the moving cost,}
+            \begin{equation*}
+            {Move_{od} = \begin{cases}
+                                1\  \  if\ U(E(Income_{move})) \geqslant U(Income_{stay}) + U(Cost_{move})\\
+                                0\   \  else
+                               \end{cases}}
+            \end{equation*}
+         \item
+         \scriptsize{
+         Individual face \textbf{\alert{incomplete information}} and \textbf{\alert{uncertainty}} about the potential destination. For simplicity, expected income of moving is assumed to has a normal distribution: $E(Income_{move}) \sim  N(\mu,\ \sigma^2)$. }
+         \end{itemize}
+         
+        \end{block}
+
+    \setbeamercolor{block title}{bg=brown(web)}
+	\begin{block}{Information Update the Belief}
+         \scriptsize{Assuming a risk averse potential migrant has \textbf{\alert{more information}},}
+         
+        \begin{itemize}
+        \item
+         \scriptsize{
+         \textbf{\alert{Perceived mean of income}}: Positive info increase $\mu$, negative info decrease $\mu$. }
+         
+         \item
+         \scriptsize{
+         \textbf{\alert{Perceived certainty}}: All types of info decrease $\sigma^2$, making the migration less risky.}
+
+           \item
+         \scriptsize{
+         Positive information increase chance of moving, negative one's effect is ambiguous.}
+
+         
+         \end{itemize}
+         \vskip 0.08cm
+         \scriptsize{
+         With \textbf{\alert{updated belief}} $E(Income^*_{move}|Info) \sim N(\mu*,\ \sigma*^2)$, one may \textbf{\alert{alter the decision}},}
+        \end{block}      
+  \end{frame}
+
+
+\section{LR I}
+\begin{frame}
+    \frametitle{Literature Review I: }
+    \framesubtitle{\scriptsize{\textit{Information is Important in Making Migration Decisions}}}
+        \vskip 0.1cm
+        
+    \begin{enumerate}
+        \item  \alert{\small{Most works in the area focus on the role of networks or linguistic and cultural enclaves.}}
+        \vskip 0.2cm
+        
+        \begin{itemize}
+
+            \item \footnotesize{Using data of rural China, \cite{p3} found that more experienced migrants a village has, more likely other villagers will migrate.}
+            \vskip 0.2cm
+
+            \item \footnotesize{\cite{p5} shows that an immigrant in US  with a larger network, is more likely to be employed and to have a higher income.}
+            \vskip 0.2cm
+
+        \end{itemize}
+        \vskip 0.2cm
+
+     \item \alert{\small{However, information can be in other forms. For example, news on TV or newspaper.}}
+     \vskip 0.2cm
+
+     \begin{itemize}
+         \item \footnotesize{Access to more TV stations in Indonesia reduced the likelihood of moving\citep{p6}.}\\
+         \vskip 0.1cm
+         \tiny{\textit{(Plausibly by correcting optimistic expectations about migration)}}
+         \vskip 0.2cm
+
+         \item \footnotesize{Specifically, the content of news should have an impact.}
+         
+     \end{itemize}
+    \end{enumerate}
+
+    \end{frame}
+
+
+\section{LR II}
+\begin{frame}
+    \frametitle{Literature Review II: }
+    \framesubtitle{\scriptsize{\textit{Moving to jobs: The role of information in migration decisions \citep{p7}}}}
+        \vskip 0.2cm
+
+        \begin{enumerate}
+            \item \small{\alert{Question: Do exposure to news about fracking affect migration?}}
+            \vskip 0.1cm
+            
+            \begin{itemize}\scriptsize{
+                \item In US, fracking booms lead to increase in local employment and earnings.
+                \vskip 0.08cm
+                
+                \item Newspaper and TV began touting its benefits or adverse side effects.}
+            \end{itemize}
+            \vskip 0.15cm
+
+            \item \small{\alert{Methodology}}
+             \vskip 0.1cm
+            \begin{itemize} 
+             \footnotesize{\item} \begin{center}
+                \footnotesize{
+                $ Migration_{o\Rightarrow s}=\beta_1 NewsExposure_{s\ fracking}+\beta_2 Control_{os}+\beta_{3,4} FixedEffect_{o,s}$}
+                \end{center}\end{itemize}
+                \vskip 0.15cm
+
+            \item \small{\alert{Conclusion}}
+             \vskip 0.1cm
+            \begin{itemize}\scriptsize{
+                \item One news article about fracking in state s increase migration flow to s by 2.4\%.
+                \vskip 0.08cm
+                \item Migration flows are less responsive to \alert{negative news}, but its effect is \alert{positive}}.\\
+            \end{itemize}
+        \end{enumerate}
+        \vskip -0.2cm
+
+
+    \begin{center}
+    \vskip -0.2cm
+    \begin{column}{0.95\textwidth}
+    \vskip -0.2cm
+        \setbeamercolor{block title}{bg=green}
+	\begin{block}{Explanation and Intuition}
+        \begin{itemize}
+        \footnotesize{ \item The negative effect can have positive impact.\\
+        \tiny{Reduction in uncertainty $>$ Reduction in perceived mean of income}
+        
+        \vskip 0.12cm
+        
+        \item
+        \footnotesize{People have a prior belief of the news\scriptsize{(positive about fracking)}, so their perception are the real base for updating belief:} }\\ \tiny{\textit{$E(Income^*_{move}|Perception\ of\ News)$ instead $E(Income^*_{move}|\ News)$  }}
+        \vskip 0.12cm
+
+        \item
+        \footnotesize{Overall, news content can impact the migrant's decision of destination.}
+
+        \end{itemize}
+       \end{block}
+    \end{column}
+    \end{center}
+
+
+\end{frame}
+
+
+\section{China State Media}
+\begin{frame}
+    \frametitle{China's State Media}
+    \framesubtitle{\scriptsize{\textit{In the context of China, there can be influential news sources impact people's migration decision}}}
+
+    
+    \begin{itemize}
+  
+         \footnotesize{\item  State media who monopolized the market are very authoritative information sources. For example,}
+
+                   \begin{center}         
+     \begin{columns}
+        
+            \column{.45\textwidth} 
+            \begin{block}{\small{1. News Simulcast}}
+
+            \begin{itemize}
+            \scriptsize{
+                \item Most watched news program in China since 1978.
+                \item Covering major domestic and foreign affairs.}
+            \end{itemize}
+
+            \end{block}
+
+            
+            \column{.45\textwidth}
+            \begin{block}{\small{2. People's Daily }}
+
+            \begin{itemize}
+            \scriptsize{
+                \item Official newspaper of the government since 1948.
+                \item The government provides its policy induction and viewpoint directly. }
+            \end{itemize}
+            \end{block}
+   
+     \end{columns}
+      \end{center}
+     \vskip 0.2cm
+    
+
+            \footnotesize{\item However, the coverage of the event can be culturally, ideologically, and politically situated\citep{p8}.}\\
+            \vskip 0.04cm
+
+            \begin{enumerate}
+            \setbeamerfont{item projected}{size=\scriptsize}
+
+            \item\scriptsize{Reported foreign affairs are often negative\citep{p9}, which \alert{manipulate the viewer's  viewpoint} about foreign countries\citep{p10}.
+            \vskip 0.05cm
+            
+            \item The report of the domestic affairs are often positive, always showing the positive prospects across the nation. }
+            \end{enumerate}
+
+            \vskip 0.05cm
+
+            \ColorAlert{\footnotesize{Since the state media can render positive economy prospects in reported places(though might be biased), could they affect migrant's decisions? }}
+            
+           \end{itemize}
+
+\end{frame}
+
+
+
+\section{Research Question}
+\begin{frame}
+    \frametitle{Research Question:}
+    \framesubtitle{\normalize{\textbf{Does the State Media Impact the Destinations of Internal Migrants in China?}}}
+    \vskip 0.05cm
+
+    \begin{itemize}
+        \item \alert{Hardly any Similar Research}\\
+        \vskip 0.1cm
+        \footnotesize{In the existing literature regarding the China's internal migration, the role of exposure to news hasn't been scrutinized.}
+        \vskip 0.15cm
+
+        \normalsize{\item \alert{Assumption}}\\
+        \vskip 0.1cm
+        \footnotesize{Most state media's domestic news are positive, the exposure of one province update the viewers' perception of that province's economy opportunities, modifying the chance of moving there.}
+        \vskip 0.12cm
+
+    \end{itemize}
+        
+    \setbeamercolor{block title}{bg=brown(web)}
+    \begin{block}{Expectation}
+    
+
+        \footnotesize{Control for other factors, we expect the exposure of a particular province $s$,}
+        \vskip 0.08cm
+        
+        \begin{enumerate}
+            \footnotesize{\item Increase the chance a migrant select $s$ as destination.}\\
+            \vskip 0.06cm
+            \tiny{\textit{The coverage convert into more positive perception.}}
+            \vskip 0.1cm
+            
+            \footnotesize{\item Decrease the chance a migrant select $s$ as destination.}\\
+            \vskip 0.06cm
+            \tiny{\textit{The coverage convert into more negative perception. People have prior belief about province $s$}}
+            \vskip 0.1cm
+            
+            \footnotesize{\item No impact on the migrant's decision making.}\\
+            \vskip 0.06cm
+            \tiny{\textit{People are more relied on other types of information.}}
+            
+        \end{enumerate}
+        
+    \end{block}
+
+\end{frame}
+
+
+\section{Possible Method}
+\begin{frame}
+    \frametitle{Possible Method}
+
+    \setbeamercolor{block title}{bg=brown(web)}
+    \begin{block}{Ordinary Least Squares}
+    \vspace{0.1cm}
+
+      $ Migration_{ost}=\beta_1 NewsExposure_{st}+\beta_2 Control_{os}+\beta_{3,4} FixedEffect_{ot,st}$
+
+     \vskip 0.12cm
+
+      \setlength{\leftmargini}{20pt}
+      \begin{itemize}
+         \footnotesize{
+          \item \alert{$Migration_{ost}$}: Percentage of migrants move from province $o$ to $s$ in the total migrants moving out $o$ in year $t$.
+             \vskip 0.1cm 
+             \item \alert{$NewsExposure_{st}$}: Percentage of province $s$ related news on News Simulcast or People's Daily.
+             \vskip 0.1cm
+             \item \alert{$Control_{os}$}: Control factors between province $o$ and $s$ (Distance).
+             \vskip 0.1cm
+             \item \alert{$FixedEffect_{ot,st}$}: Province fixed effects in year $t$ (Income, Unemployment).
+             }
+             \end{itemize}
+             
+    \end{block}
+
+    \setlength{\leftmargini}{12pt}
+    \begin{itemize}
+        \item \alert{Additional Transformation}
+        \vskip 0.15cm
+        
+       \setlength{\leftmarginii}{10pt}
+       \setbeamerfont{itemize/enumerate body}{size=\footnotesize}
+        \begin{enumerate} \footnotesize{
+            \item Add previous years' $Migration_{os,t-n}$ to account for the network effect.
+            \vskip 0.1cm
+
+            \item Include the previous years' $NewsExposure_{s,t-n}$ to capture the potential lag effect.
+             \vskip 0.1cm
+
+            \item Add square term of $NewsExposure_{st}$ to seize the decreasing returns to information\citep{p7}.
+            }
+        \end{enumerate}
+        \end{itemize}
+    
+\end{frame}
+
+
+\section{Data Sources and Potential Problems}
+\begin{frame}
+    \frametitle{Data Source and Potential Problems}
+
+    \begin{itemize}
+        \item \alert{Data Source}
+        \vskip 0.1cm
+        
+        \setbeamerfont{itemize/enumerate body}{size=\footnotesize}
+        \begin{enumerate}\footnotesize{
+            \item \alert{Migration Data}: Household Surveys, Panel Data Set of Previous Research
+            \vskip 0.1cm
+            
+            \item \alert{News Data}: Database of News Simulcast and People's daily are available, but to extract the exposure of province need data mining. Luckily, the code for similar process is online(Kaggle).
+            }
+        \end{enumerate}
+        \vskip 0.25 cm
+
+        \item \alert{Potential Problems}
+        
+        \setbeamerfont{itemize/enumerate body}{size=\footnotesize}
+        \vskip 0.1cm
+         \begin{enumerate}\footnotesize{
+            \item \alert{Data Matching}: Data from different sources may not be in the same time period.
+            \vskip 0.1cm
+            
+            \item \alert{News Exposure Rate}: News exposure rate should varied across the province but data haven't been found.\\
+            \textit{\tiny{(May use possession rate of TV or literacy rate instead.)}}
+            \vskip 0.1cm
+
+            \item \alert{Types of News}: We cannot expect different types of news to have same effect (Economy, Politics)\\
+            \textit{\tiny{(More advanced text mining technique may required.)}}
+            }
+        \end{enumerate}
+    \end{itemize}\\~\\
+    
+\end{frame}
+
+
+
+\section{Reference List}
+\begin{frame} 
+	\frametitle{Reference List}
+	
+	\begin{thebibliography}{99}
+		\tiny % Reduce the font size in the bibliography
+
+   		  \bibitem[Fang et al, 2009]{p1}
+			Fang, C, Du, Y, Wang, M. (2009)
+			\newblock Migration and labor mobility in China.
+			\newblock \emph{} 
+
+                \bibitem[Farré, 2013]{p6}
+			Farré, L., Fasani, F. (2013)
+			\newblock Media exposure and internal migration—Evidence from Indonesia.
+			\newblock \emph{Journal of Development Economics} 102, 48 - 61.
+
+                \bibitem[Munshi, 2003]{p5}
+			Munshi, K. (2003)
+			\newblock  Networks in the modern economy: Mexican migrants in the US labor market. 
+			\newblock \emph{The Quarterly Journal of Economics} 118(2), 549 – 599.
+
+                \bibitem[Pan, 2020]{p10}
+			Pan,J., Shao,Z., XU,Y. (2020)
+			\newblockThe Effects of Television News Propaganda: Experimental Evidence from China. 
+			\newblock \emph{Available at SSRN 3579148}
+
+              \bibitem[Sjaastad, 1962]{p2}
+			Sjaastad, L.A (1962)
+			\newblock The costs and returns of human migration, 
+			\newblock \emph{Journal of political Economy} 70.5, 80 – 93.
+
+                \bibitem[Wilson, 2021]{p7}
+			Wilson,R. (2021)
+			\newblock Moving to jobs: The role of information in migration decisions. 
+			\newblock \emph{Journal of Labor Economics} 39(4), 1083 - 1128.
+
+                \bibitem[Wang, 1993]{p8}
+			Wang,S. (1993)
+			\newblock The New York Times’ and Renmin Ribao’s news coverage of the 1991 Soviel coup: A case study of international news discourse. 
+			\newblock \emph{Text-Interdisciplinary Journal for the Study of Discourse} 13(4), 559 - 598.
+
+               \bibitem[Xu, 2019]{p9}
+			Xu, Z., Clark,A.M. (2019)
+			\newblockIt is a Scary and Dangerous World: A Content Analysis of Xinwen Lianbo’s News Coverage of Foreign Affairs.
+			\newblock \emph{}
+   
+                \bibitem[Zhao, 2003]{p3}
+			Zhao, Y. (2003)
+			\newblock The role of migrant networks in labor migration: The case of China, 
+			\newblock \emph{Contemporary Economic Policy} 21(4), 500 – 511.
+   
+
+	\end{thebibliography}
+\end{frame}
+\end{document} 
