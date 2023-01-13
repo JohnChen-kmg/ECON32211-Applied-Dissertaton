@@ -1,0 +1,168 @@
+\documentclass{article}
+% Reference settings
+\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+\addbibresource{data inventory.bib}
+
+% Output language
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% Font settings
+\renewcommand{\familydefault}{\sfdefault}
+% Language setting
+\usepackage[english]{babel}
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+% Header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\chead{Data Inventory}
+% Other format settings
+\usepackage{tgbonum}
+\usepackage{float}
+\usepackage{varioref}
+% Word count settings
+
+% Tables
+\usepackage{tabularx,ragged2e,booktabs,caption}
+\newcolumntype{C}[1]{>{\Centering}m{#1}}
+% Tables, graphs, math, hyperlinks, quotations
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{csquotes}
+
+
+\title{\textbf{Data Inventory}}
+\author{Jiaxiang Chen}
+\date{}
+
+\begin{document}
+\maketitle
+\linespread{1.2}
+
+
+\section{Introduction}
+The research question is: "Does the exposure rate of province on the state media affect the chance of migrants moving there?", we need the \textbf{news exposure rate data} and the \textbf{migration data}. In addition, according to the model specification,  we also need the data of \textbf{control variable}, for example distance between provinces, average income and etc. For \textbf{news exposure rate data}, I scraped the 2000 People's Daily's title and computer the exposure rate. While for the \textbf{migration data} and other \textbf{control variable}, I choose the data set previously used in an article published on AEJ which studies 2000 and 2005 China's migration pattern. The dataset not only include the migration flow, but also has essential control variables.  (Plus, all the data and coding are on my GitHub account: \url{https://github.com/JohnChen-kmg/ECON32211-Applied-Dissertaton})
+
+
+\section{News Exposure Rate}
+In the research proposal, I decided to examine the News Simulcast(xinwenlianbo) and People's daily(renminribao), which are respectively the most influential TV news program and newspaper in the country. For the purpose of research, we need the exposure rate of every Chinese province, which is defined as,
+
+\begin{equation} \label{ert}
+    NewsExposure_{st}=\frac{Total\ news\ article\ about\ province\ s}{Total\ domestic\ news\ in\ year\ t}
+\end{equation}
+However, I haven't found any data calculating the number of news by province, but there are websites documenting the content of News Simulcast and People's daily. I eventually choose: \url{https://cn.govopendata.com/}, which contains the the contents of News Simulcast since 2007 and People's Daily since 1948.\\~\\
+Then, I scrape the data on the website and calculate the exposure rate for all the mainland provinces. However, I have only tried with the data of 2000 News Simulcast, so I need to replicate the process for other years for further analysis. Since the migration data hasn't been settled yet, the opportunity cost to do the process for all years is very high during the final weeks. I only scrapped the title of the news, which is straightforward to see which province is being reported. With the scrapped data, I then computed the frequency each province appeared, mere using the index of provincial municipality. The titles the state media choose are always include the province,  but after I scrolling down the table, I found some news title only display the name of the city or county, instead of province. Moreover, some news title barely using the abbreviation of the province. Overall, these kind of cases are only of a small amount, but the issue can be tackled by a bit more coding.
+\\~\\
+First, we look at the description of variable in the news exposure rate dataset,
+\begin{table}[H]
+\centering
+\captionsetup{labelfont=bf}
+\captionof{table}{\textbf{Variable Description: News Exposure Rate Dataset}}\label{tab:title}
+\begin{tabular}{lll}
+  \hline
+  Variable & Type &Description \\ 
+  \hline
+  eng\_prov & Character & 31 mainland China provinces labelled in English \\ 
+  freq  & Numerical &Total appearance of a province in 2000 People's Daily \\ 
+  exp\_rate2000 & Numerical &  Exposure Rate of a province (Using equation 1) \\
+   \hline
+\end{tabular}
+\end{table}
+\\~\\
+Second, we can compute a summary statistics for the numeric variable,
+
+\begin{table}[H]
+\centering
+\captionsetup{labelfont=bf}
+\captionof{table}{\textbf{Summary Statistics: News Exposure Rate Dataset}}\label{tab:title}
+\begin{tabular}{llllll}
+  \hline
+  Variable  & obs & Mean & Median  & Max & Min \\ 
+  \hline
+  freq & 31 & 117.2 & 80.0 & 815.0 & 43.0 \\ 
+  exp\_rate2000 & 31 & 0.032258&  0.022014 & 0.22427 & 0.011833 \\ 
+   \hline
+\end{tabular}
+\end{table}\\~\\
+From the table above, we can see that the max for variable freq is abnormal. This data belongs to Beijing, indicating the capital appearing on the People's Daily more than twice a day, significantly higher than the other provinces. This possibly can be explained that a lot of important political event happens there. However, according to the migrant's decision rule, every piece of information is useful for updating belief. I still insist go with the strong assumption that the news of state media are homogeneously positive, but it would be better to use NLP to classify the types of the news and assign weight to the data accordingly.
+
+\section{Migration Data and Relevant Variables}
+Since the migration data is complicated, I chose to directly obtained that from an previous migration paper: "Trade, Migration, and Productivity: A Quantitative Analysis of China "\parencite{Tombe:2019tm}. The dataset contains not only the statistics of migration flow, also contains several necessary control variables, which is a result of combining the data from different national census and several household surveys. However, the data set doesn't have data for Tibet, meaning we have only 30 provinces for the migration data. Finding all the relevant control variables can be time-consuming and need to search for various sources, it would be more efficient to choose a mature dataset. However, the data only contains 2000 and 2005, limiting the time period we can potentially study.
+\\~\\
+The dataset has 14 variables in total, but I only need to use 8 of them so far to serve the model in my research proposal. Firstly, the following tables are an example observation of the data and the description of the variables,
+\begin{table}[H]
+\centering
+\captionsetup{labelfont=bf}
+\captionof{table}{\textbf{Example Observation: Migration Data}}\label{tab:title}
+\begin{tabular}{llllllll}
+  \hline
+  importer & exporter & j & i & mij\_mii2000 & Vj & Vi & distance \\ 
+  \hline
+Beijing	& Anhui &	Beijing-Ag	& Anhui-Na & 0.000038 & 0.633079 & 1.08555 & 868.6245
+
+
+\\
+   \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[H]
+\centering
+\captionsetup{labelfont=bf}
+\captionof{table}{\textbf{Variable Description: Migration Data}}\label{tab:title}
+\begin{tabular}{lll}
+  \hline
+  Variable & Type & Description \\ 
+  \hline
+  importer & Character &  Origin province of the migrants\\
+  exporter  & Character &   Destination province of the migrants\\ 
+  j & Character &  Destination province sector where the migrant work: Agricultural or Non-Agricultural \\
+  i& Character &  Destination province sector where the migrant work: Agricultural or Non-Agricultural  \\
+  mij\_mii2000 & Numerical & Migrant share from i to j, relative to non migrants from origin province i (The migration flow)\\
+  Vj & Numerical & Real income of destination province j sector\\
+  Vi & Numerical & Real income of origin province i sector\\
+  distance & Numerical & Distance between the origin province i and destination province j\\
+   \hline
+\end{tabular}
+\end{table}
+
+\\~\\
+The sample observation in Table 3 represents the migration flow from Anhui's non-agricultural sector to  Beijing's agricultural sector. The migrants original earning is 1.08555 and the current earning is 0.633079 (which has been standardised). The distance between the two place is 868.6245.
+\\~\\
+It is worth noticing that the migrant flow is measured by the percentage of the migrants moving from i to j to the non-migrants with respect to the number of non-migrants in j. However, if we want to estimate the actual number of migrants, we need to find the population census of that year to compute the data. Then, the following table is the summary statistics of the migration data,
+
+\begin{table}[H]
+\centering
+\captionsetup{labelfont=bf}
+\captionof{table}{\textbf{Summary Statistics: Migration Flow Data}}\label{tab:title}
+\begin{tabular}{llllll}
+  \hline
+  Variable  & obs & Mean & Median  & Max & Min \\ 
+  \hline
+  mij\_mii2000 & 3540 & 0.00397 & 9.06e-05 & 1.7678 & 1.25e-06\\
+  Vj & 3540 & 1 & 0,67885 & 3.3928  & 0.14052\\
+  Vi & 3540 & 1 & 0.67885 & 3.3928 & 0.14052\\
+  distance & 3480 & 1373.6 & 1246.3 &3729.7 &121.66 \\
+   \hline
+\end{tabular}
+\end{table}
+\\~\\
+There are 3540 observations for the first 3 variables. For there are 2 types of sector, so there are 4 possible migration types across provinces and 2 possible migration types within the province: 4*30*29+2*30=3540. For the variable distance, only inter province observation has value, so there is 60 less observations. Also, from the table we can see the average income has been standardised, which provide me with a hint to do the same process with the migration flow variable, since it is of a very small scale.
+
+
+\section{Limitations}
+First, the time matching of the data will bring some difficulties. To conduct further analysis, we need to make sure the data must be in the same corresponding time period. Though the People's Daily database can be traced back to 1948, the data base for News Simulcast can only go back as far as 2007, while the migration data is of 2000 and 2005. The possible solution is to discard the analysis of the News Simulcast or keep finding the appropriate database. Especially, to compute the migration data by my own instead using the dataset provided by the previous paper(I still can follow that paper's recipe of which dataset to choose), but it will be time-consuming. Second, the overall time of the data seems a bit of late The most ideal period of data should be in 1980s, when the migration first started and the information technology was still in a basic form for China's migrants. Our data, however, is around 2000,a year we might think of an already built up a strong network for the migrants since the migration has begun nearly 20 years by then. The only solution is to find earlier data, but the more we trace back, less data can be found with less accuracy. Third, it has mentioned that the research proposal has a strong assumption that all the news on the state media are of homogeneously positive impact. In reality, different types of data surely have various impact. In this case, it would be better if we can apply more advanced text mining technique to classify the news types, thus giving them different weight regarding their type in the regression.
+
+
+
+\section{Other Potential Sources}
+For the news data, the database online are similar, documenting the content of the news daily. For the People's Daily, my selected database documents the news from 1940s, which is definitely enough for my research. However, for the News Simulcast, it is only since 2007. I saw there are open database for 2005 News Simuclast, but somehow my internet can't have access to that.
+\\~\\
+For the migration data, since the dataset selected only has 2000 and 2005, we possibly gonna use other data sources at least for trial. The recipe and the sources of that selected dataset is presented in the article, which provide some guide for building up my own indexes. However, there are quite a few migration data sources, like Rural Household Survey, 1 percent Sampling Survey and etc. For the control variable, they are of more diversified and maybe more accessible  sources. For example, the average income can simply acquired in the China's annual census.
+
+\linespread{1.6}
+\printbibliography
+\end{document}
