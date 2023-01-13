@@ -51,3 +51,7 @@ pd_2000exp$exp_rate2000 <- as.numeric(pd_2000exp$freq)/n2000
 
 # Export data as csv file, for further analysis
 write_excel_csv(pd_2000exp, file='PD_2000exp.csv')
+
+
+
+
