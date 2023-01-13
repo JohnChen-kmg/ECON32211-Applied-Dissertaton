@@ -1,0 +1,256 @@
+\documentclass{article}
+% Reference settings
+\usepackage[style=authoryear-ibid,backend=biber]{biblatex}
+\addbibresource{research proposal.bib}
+
+% Output language
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+% Font settings
+\renewcommand{\familydefault}{\sfdefault}
+% Language setting
+\usepackage[english]{babel}
+% Set page size and margins
+% Replace `letterpaper' with `a4paper' for UK/EU standard size
+\usepackage[letterpaper,top=2cm,bottom=2cm,left=2cm,right=2cm,marginparwidth=1.75cm]{geometry}
+% Header
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\chead{Research Proposal}
+% Other format settings
+\usepackage{tgbonum}
+\usepackage{float}
+\usepackage{varioref}
+% Word count settings
+
+% Tables
+\usepackage{tabularx,ragged2e,booktabs,caption}
+\newcolumntype{C}[1]{>{\Centering}m{#1}}
+% Tables, graphs, math, hyperlinks, quotations
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage{csquotes}
+
+
+\title{\textbf{Research Proposal: The Impact of the State Media on the Destination of the Internal Migrants in China}}
+\author{Jiaxiang Chen}
+\date{}
+
+
+\begin{document}
+\maketitle
+\linespread{1.2}
+
+\section{Introduction}
+For microeconomist, information can reduce uncertainty and is of great value, with which people make decisions or alter their original ones \parencite{Feltham:1968vm}. In the realm of the migration study, information has always been an key factor for the migrants to take account of the uncertain conditions in the potential destinations. In the human history, China's internal migration since late 70s has been the most extensive one \parencite{ILO:2013lm}. For the Chinese people, the influential state media has always been an authoritative information sources. The research proposal tend to design an plan for exploring the potential impact of the state media on the migration decisions of the China's internal migrants. Specifically,
+\begin{center}
+   \textbf{\textit{Does the exposure rate of province on the state media affect the chance of migrants moving there?}} 
+\end{center}
+
+\section{Motivation}
+
+\subsection{Migration Pattern}
+Understanding migration pattern is important for the economists and policy makers. More trenched knowledge of the migration flow is contributive for us to capture the labor market situations and to come up relevant policies to control the migration and to decrease the market frictions \parencite{Castles:2004cf}. For example, China has long been known to use strong policy intervention to control migration and the pertinent policies have been evolving to serve the national goals at  different development stages \parencite{Cai:2009qr}.
+
+
+\subsection{History Context}
+In 1978, China began its economic reform, opening the country's broader for foreign investment. With the manufacturing sector gradually thriving in its eastern coastline provinces, rural migrants from other parts of the country began pouring into those provinces to fill up the excess labor demand \parencite{Chan:2009ch}. Household Registration policy (Hukou), which promulgated in 1950s, associated one's access to food, medical services and education with his registered residence, strictly preventing the citizen's free movement within the country and halting the internal migration for decades \parencite{Cheng:1994os}. However, the Hukou policy were partially discarded to increase the labor mobility in terms of the increasing number of industrial jobs in the coastline provinces, paving the way for rural workers to migrate \parencite{Cai:2001hu}.
+
+
+\subsection{Information Source}
+Under the asymmetric information, migration pattern can be very different from the one without that, which has a big impact on the labor market \parencite{Katz:1987ia}. Considering how geographically huge the China is and hardly any migration activities for years, there shouldn't be that much information for the post-70s rural labors when they were making their choices. For instance, a potential migrant might be confused about selecting the destination, which is the most important factor regarding the expected migration outcome. In an authoritarian country, the state media which monopolized the market are the citizen' s major information sources. In the case of China, there are indeed very powerful media which have influenced the people's choices for a long time  . For example, the most influential newspaper and news program: People's daily (renminribao), News Simulcast (xinwenlianbo) \parencite{Yu:2009mc}. In addition, with the spread of literacy rate and the popularity of TV in late 70s,  state media has significantly more dominant. It is worth mentioning that during the culture revolution, just preceded the 1978 economic reform, the Chinese people's daily life was strongly immersed in the major state media publications \parencite{Leung:2012ic}.
+\\~\\
+In essence, with the underlying history background, the China's state media may have some impact in terms of its internal migrants' decision makings, especially the destination.
+
+
+\section{Conceptual Framework}
+The migration study is always taken on an interdisciplinary approach, which is a mixture of the sociology and economics, and the rational choice theory provides the basis \parencite{Haug:2008mn}. The perspective action of each migrant, together with the micro-macro link characterise the rational choice approach. Thus, regarding the micro-macro modelling, the sum of individual decisions results in a macro outcome, which is ultimately the migration pattern \parencite{Schelling:1978mm}. The decisions makers here are consists of the combined sets of migrants, potential migrants and people who once considered migrating but eventually didn't.
+
+
+\subsection{The Canonical Migration Choice Model} \label{model}
+\textcite{Todaro:1970td} described the migration as an rational action, which is intended to maximize the decision maker's net return. \textcite{Sjaastad:1962cr} proposed an model to illustrate the process of migrant's decision making: a person will move from $o$ to $d$ if the utility of life time expected income of moving exceed that of staying plus the moving cost,
+
+\begin{equation}\label{eq:model}
+            {Move_{o\rightarrow d} = \begin{cases}
+            1\  \  if\ U(E(Income_{move})) \geq U(Income_{stay}) + U(Cost_{move})\\
+            0\   \  else
+                         \end{cases}}
+\end{equation}
+However, individual face incomplete information and uncertainty about the potential destination \parencite{Wilson:2021wi}. To address this issue with simplicity, we assume the expected income of moving to has a normal distribution, and also we use the expected income $E(Income)$ instead of income which needs extra analysis of the variance,
+
+\begin{equation}
+    E(Income_{move}) \sim  N(\mu,\ \sigma^2)
+\end{equation}
+Since there exists incomplete information, the person doesn't know the real income at the destination. Thus, the $\mu$ indicates the perceived mean of income, representing how much the person thinks he can earn after moving. In addition, though the person probably has some ways to build up the knowledge of the expected return, he may not be confident about the intermediary sources or whether the future is going to be the same. So, there are uncertainty, which is shown by the variance $\sigma^2$.
+
+
+\subsection{Information Update the Belief}
+The migrant's decision making in the is heavily relied on the information regarding the potential destinations where the conditions are uncertain \parencite{Allen:1979it}. In the canonical choice model \eqref{eq:model}, we can see that the $E(Income)$ is an uncertain component, which is determined by the decision maker's own belief. The expectation is formed by the information the decision maker already has and it can be altered by providing new information.
+\\~\\
+Then, we consider the scenarios where a risk averse person is getting more information about the destination and there are two types of information: positive and negative. Firstly, it is straightforward that higher the expected income will make the migration more desirable,
+
+\begin{equation}
+    \frac{\partial U(E(Income_{move}))}{\partial \mu} > 0
+\end{equation}
+Receiving the positive news, people's perceived mean of income will increase, while getting more negative information will decrease that,
+
+\begin{equation}
+    \begin{aligned}\label{eq:1}
+    Postive\ information&:\frac{\partial U(E(Income_{move}))}{\partial \mu}\times\frac{\partial \mu}{\partial Info_{postive}} > 0\\
+    Negative\ information&:\frac{\partial U(E(Income_{move}))}{\partial \mu}\times\frac{\partial \mu}{\partial Info_{negative}} < 0
+    \end{aligned}
+\end{equation}
+However, more information, no matter of which types, tend to decrease the variance $\sigma^2$ of the expected income. If a person obtain more data, he is more certain about the distribution of the $\mu$, reflecting in a smaller $\sigma^2$. \textcite{Stiglitz:1970sj} showed that an decrease in the variance will lead to a higher expected income for a risk averse person,
+
+\begin{equation}
+    \frac{\partial U(E(Income_{move}))}{\partial \sigma^2} < 0,\ \ 
+    \frac{\partial \sigma^2}{\partial Info} < 0
+\end{equation}
+ Therefore, we can see that less uncertainty about the expected income making the migration less risky and more attractive. Thus, for all information,
+
+ \begin{equation}\label{eq:2}
+    \frac{\partial U(E(Income_{move}))}{\partial \sigma^2}\times\frac{\partial \sigma^2}{\partial Info} >0
+ \end{equation}
+ With \eqref{eq:1} and \eqref{eq:2}, it is clear that the positive information ($Info_{positive}$) will increase the chance of migration, whilst the negative one' effect ($Info_{negative}$) is ambiguous.
+Overall, if a person receive some information regarding the potential destination, his belief about the expected income will be updated. With the updated expected income conditional on the information received, we can rewrite the expected income as $E(Income^*_{move}|Info^*)$, which follows a new distribution,
+
+\begin{equation}
+    E(Income^*_{move}|Info^*) \sim N(\mu^*,\ \sigma^{*2})
+\end{equation}
+According to the classical  microeconomics theory, if information makes a decision maker alter his original choice, then the information is worth corresponding value. Overall, information plays a part in the migration process and different types of content can have various impact.
+
+
+\section{Literature Review}
+\subsection{Information and Migration Decisions}
+In the contemporary world, the information can be embedded in different forms, but  most of the relevant works in the migration study focus on the role of networks or linguistic and cultural enclaves, instead of emphasizing the significance of media \parencite{Wilson:2021wi}.
+\\~\\
+The information acquired by the means of the network are usually have positive impact on the migrants' updated belief, increasing the perceived expected income.  Labor economists has long pointed out that the workers find jobs more easily through personal networks, like family or friends \parencite{Corcoran:1980mf}. Using a two-period model of labor market, \textcite{Montgomery:1991sl} proved that the people who employed through the social networks earn a higher wages and more depended on the referrals an employer is, higher the profit the company makes. \textcite{Munshi:2003mn} found that a Mexican migrants in US are more likely to be employed and obtain a higher wage if he has a larger network (more counterparts from same municipality in Mexico), which channels the members of the same community into higher paying coveted positions. In the case of illegal migration from Brazil to US, a migrants is more likely to succeed clandestinely with more support from personal network, like strong relationship with travel agency \parencite{Fazito:2015fs}. A migrant family in Delhi stays longer in the city if there are female members alongside, because women can build up essential networks and obtain information in the destination \parencite{Neetha:2004nm}. During China's culture revolution, there was a program which sent young people from the city to the rural area for laboring and the destinations were randomly selected. For example, many young people from Shanghai were sent to Yunnan province, but the two province are geographically distant and have no historical connections. However, when the program ended after reform, the migrants were more likely to select the province where there were previously dispatching the young people to those migrant's hometown, simply because the preexisting network can provide assist and information \parencite{Kinnan:2018am}. 
+\\~\\
+Nevertheless, the network sometimes can carry pessimistic information and have a negative impact on the potential migrants. Technically, those networks decrease the decision maker's expected utility of moving. In rural China, more returned migrants a village has, less likely that other villagers  will migrate \parencite{Zhao:2003zr}. This can be explained by the that returning migrants could clarify the real earning in the potential destinations.
+\\~\\
+From the past pattern, we can observe a general trend that personal network has positive influence on the expected return of migration, increasing the chance of migration. However, it can be more plausibly explained by the underlying information type a network carries. Knowing someone who works in the travel agency or has already settled down in the destination can directly provide useful information, which are usually positive for migration. On contrary, knowing someone who escaped the potential destination, the migrants will receive more negative information.
+\\~\\
+Under this theory, the impact of the media, which is also an important information transmitter, should be expected to has an effect correlated with the type of reported  content. More positive news about one specific place promote the potential migrant's confidence in that place, while negative report decrease that. \textcite{Braga:2007m} found that an Albanian is more likely to migrate to Italy if he is more exposed to Italian media, which renders an impression of superior foreign lifestyle. For the rural residents in Indonesia, however, more accessibility to TV decrease the chance of migrating into big city, which probably explained by the news crashing their high expectation for the urban life \parencite{Farré:2013fm}.
+\\~\\
+However, unlike the personal network which are mainly family, friends or neighbours, people often  have their own perception about the media and be highly skeptical when comes to the reported content \parencite{Kiousis:2001kp}.  Moreover, people can have a prior belief towards a certain topic and no matter which types of news content provided can not change their original belief and even enhanced it \parencite{Sambrook:2021sk}. In US, fracking booms have led to increase in local employment and earnings, and the newspaper and TV news began touting about its benefits. \textcite{Wilson:2021wi} found that the one news article about fracking in somewhere will increase the migration flow by 2.4 \%. In addition, he found that negative news also has positive effect on the migration flow, though not so much as the positive ones. The phenomenon can be explained by the conjecture that people have prior belief about fracking. As long as they believe fracking will bring good economic prospect, they wouldn't care that much for the health issues or the environmental issues fracking will bring. On contrary, the negative news enhance the recipients' confidence about the fracking is indeed happening in the potential destination.
+\\~\\
+To mimic the process where people using news content to update the belief, we can apply Bayesian rule to the previous mentioned migration model (Note: In reality, \textcite{Wiswall:2015wd} found that people's behaviour pattern doesn't necessary follow the Bayesian rule). With the given information and the prior perceived distribution of $P(Income)$, people form the perception $P(Info^*|Income)$, which is the likelihood of information is true given the prior belief. Use Bayes rules, we can show, 
+
+\begin{equation}
+    P(Income|Info^*)=\frac{P(Info^*|Income)\times P(Income)}{P(Info^*)}
+\end{equation}
+In the above equation, the distribution of the probability of observing information should be a positive constant, then the updated distribution of perceived income is, 
+
+\begin{equation}
+      P(Income|Info^*) \propto P(Perception\ of\ Info^*)\times P(Income)
+\end{equation}
+Then, we can show that the updated perceived expected income has a new distribution,
+
+\begin{equation}
+    E(Income^*|Info^*)\sim N(\mu^*, \sigma^{*2})
+ \end{equation}   
+And it is proportional to the distribution of the perception of information,
+
+\begin{equation}
+    \begin{aligned}
+    E(Income^*|Info^*)&=\int Pr(Income^*|Info^*)\times Income\\
+    &=\int \frac{Pr(Perception\ of\ Info^*)\times Pr(Income) \times Income}{Pr(Info^*)}\\
+    &\propto Pr(Perception\ of\ Info^*)
+    \end{aligned}
+\end{equation}
+In general, no matter for which information types, the decision makers' prior belief and perception are the real underlying basis for updating the belief regarding the potential migration destination. It is especially consequential for media, which people constantly question its reliability and justify its content with their own prior belief.
+
+
+\subsection{China's State Media}
+In authoritarian countries, state media who monopolized the market are very influential information sources \parencite{Becker:2004bl}. In addition, it is acknowledged that the state media's actual influence is beyond their own publications, because they can determine the trend of other media \parencite{Zhang:2022et}. Just like previous mentioned, News Simulcast and People's daily are respectively the most watched news program and most important newspaper in China, which may have an impact on the post-reform internal migrants who are lack of information source.
+\\~\\
+As the most watched news program on earth, News Simulcast has been broadcasting since 1978 (Economic reform happened in same year) and has been always referred as the reflector of Chinese politics \parencite{Edward:2007ei}. Covering the domestic and International news daily, the program has been proven to be successful in striving to dispatch the ideological message of the state, thus ensuring political reform kept at an ideal and cautious pace for the head of the government \parencite{Chang:2016tn}. Unlike News Simulcast, People's daily started a lot earlier and always being the government’s flagship newspaper. Since 1948, right before the communist took over the country, People's daily is also considered as an mirror of the government's attitudes and policies \parencite{Fish:2017fc}.
+\\~\\
+Though being influential, the coverage of the news can be culturally, ideologically and politically situated \parencite{Wang:1993wn}. For example, the sentiment of People's daily's coverage of US is heavily correlated with the China-US diplomatic relationship \parencite{Lee:1982ud}. More interestingly, the international news are always displaying a dangerous and scary image of foreign countries: war, political scandals and recessions, while the domestic news section is always bringing the good prospects of the nation \parencite{Xu:2019sd}. As a result, the powerful state media manipulate the people's view of the major issues and perception of the other places. More exposed to state media can make one's attitude more conformed with the government policy, regardless the prior perception of that policy \parencite{Pan:2022pt}. Furthermore, just as expected, the content of the state media has huge influence on people's behaviour pattern. \textcite{Zhang:2022et} found that the content of News Simulcast about Covid-19 affect the stock market return, via changing the investors' expectation. In this case, regarding the China's internal migrants, their migration decisions could be affected by the content of the news. For instance, if the state media bragging about the economy in one place and it actually exceed the real circumstance, creating extra migrants end up there.
+\\~\\
+For international news section, it indeed can tilting the citizen's perception since Bangladesh and  Estonia looks so far-fetched for normal Chinese people and the state media can be the only information source regarding the foreign events. However, for the domestic affairs, Chinese people really live in China and can observe the event from other angles, which are exactly their prior belief formed from their personal network. In this case, when the state media began doing its propaganda, the people can inversely get more negative perception about the event with their prior belief. \textcite{Huang:2015ps} found that more a Chinese college student been exposed to the state media, more dissatisfaction he get for the regime. Under this theory, within the issue of the migration, the decision maker's perceived mean of income can decrease since their prior belief indicating the potential destination isn't ideal, plus their mistrust regarding the state media, leading them less likely to migrate to the place.
+\\~\\
+To conclude, the existing studies shows that potential migrants' decision making is depended on the combined effect of the perception of the information and their prior belief. China's state media has been influential, but its impact on the Chinese people's perception is depended on the incidents' type. With most domestic news is positive, the prior belief about the destination and their perception of the state media will transmit those news and use them to update the perception of the possible destination, changing the migration pattern. In general,  we can form three expectation of the result,
+
+\begin{enumerate}
+    \item More exposure rate of a province lead to significantly more migrants moving there, meaning the coverage of the province on state media convert into positive perception
+    \item  More exposure rate of a province lead to significantly less migrants moving there, meaning the coverage of the province on state media convert into negative perception. People have their own prior belief possibly resulting from other information sources,  or they don't trust the state media.
+    \item The exposure rate of a province doesn't have any impact, meaning people are more relied on the other factors instead of guided by the state media when making their migration choices,
+\end{enumerate}
+In this case, exploring the possible impact of the state media (Province exposure rate) on the migrants (Destinations), hasn't appeared in the existing literature will be conducive for understand more about the influence of media and migration pattern.
+
+
+\section{Method}
+To inspect the exposure rate of the province of state media (News Simulacat, People's daily) on the destination selection of the migrants , we first should define the exposure rate of the province $s$ in year $t$,
+
+\begin{equation}
+    NewsExposure_{st}=\frac{Total\ news\ article\ about\ province\ s}{Total\ domestic\ news\ in\ year\ t}
+\end{equation}
+
+\subsection{Baseline Model}
+Then, we can apply the ordinary least squares to regress the migration data on the news exposure rate  with some control variables,
+
+\begin{equation}
+    Y_{ost}=\sum_{i=k}^{t}NewsExposure_{si}+ \phi_{os}+ \gamma_{ot}+ \lambda_{st}+ \epsilon_{ost}
+\end{equation}
+\begin{itemize}
+  \item The variable $Y_{ost}$ is the number of migrants moving from province $o$ to province $s$ in year $t$. However, I haven't found the data recording the exact number of migrants, but many previous paper used sampling surveys which eventually use the number in the survey observation (I possibly do this as well).
+
+  \item The term $\sum_{i=k}^{t}NewsExposure_{si}$ captures the state media exposure rate of province $s$ from year $k$ to year $t$ (The year of migration). Since the effect of news have lag effect, we should include the news data of the previous years. For instance, decision maker won't move as soon as he sees the news. However, the choose of the $k$ is uncertain and we can use AIC or BIC to select how many years should we trace back, in order to avoid over-fitting and under-fitting.
+
+  \item The variable $\phi_{os}$ determines the origin $o$ and destination $t$ fixed effect that impact migration, for example, distance between the two provinces. 
+
+  \item The variable $\gamma_{ot}$ is the origin province time-varying characteristics. For example the average income or CPI in province $o$ in year $t$.
+
+  \item The variable $\lambda_{st}$ is the destination province time-varying characteristics. For example the average income or CPI in province $s$ in year $t$.
+
+  \item The variable $\epsilon_{ost}$ is the idiosyncratic error term.
+\end{itemize}
+\\~\\
+
+\subsection{Additional Transformation}
+There are many additional factors to take account, thus resulting more model specifications for more in-depth results, but it will be largely depended on the accessibility of the data.
+
+\begin{enumerate}
+    \item The baseline model may face omitted variable bias for assuming the impact of the state media is constant across the nation. To control for this, we need the viewership rate for provinces, but the data seems to be absent. Instead, we may use the literacy rate or TV ownership rate data which some sampling survey contains,
+    \begin{equation}
+    Y_{ost}=\sum_{i=k}^{t}NewsExposure_{si}\times\zeta_{oi}+ \phi_{os}+ \gamma_{ot}+ \lambda_{st}+\epsilon_{ost}
+    \end{equation}
+    The variable $\zeta_{ot}$ represents the  the literacy rate or TV ownership in e $s$ in year $i$.
+
+    \item Within the context of China, the institution policy plays a big part. Just as previous mentioned, the Household Registration system creates barriers for migration. As the policy was gradually loosen after reform, the change of policy can be an important factor and it has proven that the exogenous shock of policy change in the destination province affect the migration flow \parencite{Kinnan:2018am}. Thus, we can have,
+    \begin{equation}
+     Y_{ost}=\sum_{i=k}^{t}NewsExposure_{si}+ \phi_{os}+ \gamma_{ot}+ \lambda_{st}+ \xi_{st}+\epsilon_{ost}   
+    \end{equation}
+    The variable $\xi_{st}$ is a dummy indicating whether there are policy change in destination province $s$ in year $t$.
+
+    \item Also, the migration pattern can be different agricultural sector and non-agricultural sector in China \parencite{Tombe:2019tm}. Then, if the data is ideal enough(The data of the Tombe's paper is available), we can have,
+    \begin{equation}
+     Y_{ostn}=\sum_{i=k}^{t}NewsExposure_{si}+ \phi_{os}+ \gamma_{otn}+ \lambda_{stn}+\epsilon_{ostn}       
+    \end{equation}
+    The list of variable is the same, except the extra footnote $n$ represents the variable can be specified for agricultural and non-agricultural sector.
+
+    \item In the previous study of the impact of fracking news on migrants \parencite{Wilson:2021wi}, the information has an decreasing marginal return on the migration flow. To capture this, we can add the square term of $NewsExposure_{si}$,
+    \begin{equation}
+     Y_{ost}=\sum_{i=k}^{t}NewsExposure_{si}+ \sum_{i=k}^{t}NewsExposure_{si}^2+ \phi_{os}+ \gamma_{ot}+ \lambda_{st}+\epsilon_{ost} 
+    \end{equation}
+    
+\end{enumerate}
+
+\section{Limitations}
+There are several limitations to be considered due to the data issues or programming complexity. First, the research is heavily depended on the assumption that the domestic news on the state media are positive. This are largely true, but there are reported events like earthquake and natural catastrophe, and the research design ignore that. However, this can be solved by more advanced programming techniques. There are very good Chinese NLP package for Python, but I haven't tried yet, so I can not take that for granted. Second, the research overlook the effect of network which plays a big part in migration. We may add the migration data from previous year to the right hand side of the econometrics equation, but I haven't found an ideal dataset, which may require the period of survey data or census lasting for years.  Third, interpretation of the migration result may be troublesome. According to the canonical migration choice model, the negative perception of the information sometimes can increase the decision maker's expected return because the impact of reduced uncertainty outweigh that of decreasing income. In this case, the result may be lack of technical confidence.
+
+
+
+
+
+\bigskip
+
+
+\newpage
+\linespread{1.6}
+\printbibliography
+
+\end{document}
